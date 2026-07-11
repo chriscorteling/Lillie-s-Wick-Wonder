@@ -18,10 +18,10 @@ export default function ProductCard({ product }: { product: Product }) {
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
           className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#141414]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#141414]/60 to-transparent md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500" />
 
-        {/* Quick add overlay */}
-        <div className="absolute inset-x-0 bottom-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+        {/* Quick add overlay — always visible on mobile, hover on desktop */}
+        <div className="absolute inset-x-0 bottom-0 p-4 md:translate-y-full md:group-hover:translate-y-0 transition-transform duration-500">
           <button
             onClick={() => add(product)}
             className="w-full py-3 bg-[#C9A96E] text-[#0A0A0A] text-xs tracking-widest uppercase hover:bg-[#E8D5B0] transition-colors font-body"
