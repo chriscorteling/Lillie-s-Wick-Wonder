@@ -34,7 +34,7 @@ export default function Navbar() {
         <Link href="/" className="flex items-center gap-3 group">
           <div className="relative w-10 h-10">
             <Image
-              src="/logo.PNG"
+              src="/logos/logo.PNG"
               alt="Lillies Wick & Wonder"
               fill
               sizes="40px"

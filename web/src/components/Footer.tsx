@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-6">
               <div className="relative w-10 h-10">
-                <Image src="/logo.PNG" alt="Lillies Wick & Wonder" fill sizes="40px" className="object-contain" />
+                <Image src="/logos/logo.PNG" alt="Lillies Wick & Wonder" fill sizes="40px" className="object-contain" />
               </div>
               <span className="font-heading text-lg tracking-widest text-[#F5F0E8]">LILLIES</span>
             </div>
