@@ -5,14 +5,30 @@ import { useState } from 'react'
 export default function ContactPage() {
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' })
   const [sent, setSent] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSent(true)
+    setLoading(true)
+    setError('')
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+      if (!res.ok) throw new Error('Failed to send')
+      setSent(true)
+    } catch {
+      setError('Something went wrong. Please try again or contact us on WhatsApp.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   const inputClass = "w-full bg-[#141414] border border-[#262626] px-5 py-4 text-sm text-[#F5F0E8] placeholder-[#6B6460] outline-none focus:border-[#C9A96E]/50 transition-colors font-body"
@@ -97,11 +113,15 @@ export default function ContactPage() {
                 rows={6}
                 className={`${inputClass} resize-none`}
               />
+              {error && (
+                <p className="text-red-400 text-sm font-body text-center">{error}</p>
+              )}
               <button
                 type="submit"
-                className="w-full py-4 bg-[#C9A96E] text-[#0A0A0A] text-sm tracking-widest uppercase hover:bg-[#E8D5B0] transition-colors font-body"
+                disabled={loading}
+                className="w-full py-4 bg-[#C9A96E] text-[#0A0A0A] text-sm tracking-widest uppercase hover:bg-[#E8D5B0] transition-colors font-body disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Send Message
+                {loading ? 'Sending...' : 'Send Message'}
               </button>
             </form>
           )}
