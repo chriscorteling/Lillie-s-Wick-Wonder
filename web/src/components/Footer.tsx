@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-6">
               <div className="relative w-10 h-10">
-                <Image src="/Logo.PNG" alt="Lillies Wick & Wonder" fill className="object-contain" />
+                <Image src="/logo.PNG" alt="Lillies Wick & Wonder" fill sizes="40px" className="object-contain" />
               </div>
               <span className="font-heading text-lg tracking-widest text-[#F5F0E8]">LILLIES</span>
             </div>
@@ -18,15 +18,30 @@ export default function Footer() {
               Handcrafted luxury candles born from a love of dark florals, rare resins, and the quiet magic of candlelight.
             </p>
             <div className="flex gap-4 mt-6">
-              {['Instagram', 'TikTok', 'Pinterest'].map((platform) => (
-                <a
-                  key={platform}
-                  href="#"
-                  className="text-xs tracking-widest uppercase text-[#6B6460] hover:text-[#C9A96E] transition-colors"
-                >
-                  {platform}
-                </a>
-              ))}
+              <a
+                href="https://www.instagram.com/lillies.wicknwonder"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs tracking-widest uppercase text-[#6B6460] hover:text-[#C9A96E] transition-colors"
+              >
+                Instagram
+              </a>
+              <a
+                href="https://wa.me/94702789944"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs tracking-widest uppercase text-[#6B6460] hover:text-[#C9A96E] transition-colors"
+              >
+                WhatsApp
+              </a>
+              <a
+                href="https://www.tiktok.com/@lillies.wicknwonder"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs tracking-widest uppercase text-[#6B6460] hover:text-[#C9A96E] transition-colors"
+              >
+                TikTok
+              </a>
             </div>
           </div>
 
@@ -34,13 +49,17 @@ export default function Footer() {
           <div>
             <h4 className="text-xs tracking-widest uppercase text-[#C9A96E] mb-5 font-body">Shop</h4>
             <ul className="space-y-3">
-              {['Candles', 'Gift Sets', 'Wax Melts', 'Accessories'].map((item) => (
-                <li key={item}>
+              {[
+                { label: 'Rose Candles', href: '/shop?category=rose-candles' },
+                { label: 'Premium Glass', href: '/shop?category=premium-glass' },
+                { label: 'Gift Packs', href: '/shop?category=gift-packs' },
+              ].map((item) => (
+                <li key={item.label}>
                   <Link
-                    href="/shop"
+                    href={item.href}
                     className="text-sm text-[#6B6460] hover:text-[#F5F0E8] transition-colors"
                   >
-                    {item}
+                    {item.label}
                   </Link>
                 </li>
               ))}

@@ -7,9 +7,10 @@ export default function AboutPage() {
       {/* Hero */}
       <div className="relative h-[50vh] mb-24 overflow-hidden">
         <Image
-          src="/IMG_7334.JPG"
+          src="/moulds/daisy-3.jpeg"
           alt="About Lillies Wick & Wonder"
           fill
+          sizes="100vw"
           className="object-cover object-center"
           priority
         />
@@ -35,7 +36,7 @@ export default function AboutPage() {
           </div>
 
           <div className="relative aspect-video overflow-hidden">
-            <Image src="/IMG_7332.JPG" alt="Our candles" fill className="object-cover" />
+            <Image src="/story/story.jpeg" alt="Our candles" fill sizes="(max-width: 768px) 100vw, 768px" className="object-cover" />
           </div>
 
           <p className="text-[#9A8F82] text-base leading-relaxed font-body">

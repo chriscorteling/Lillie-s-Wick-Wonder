@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { useCart } from '@/context/CartContext'
 
 const links = [
   { href: '/shop', label: 'Shop' },
@@ -14,6 +15,7 @@ const links = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const { count, setOpen } = useCart()
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40)
@@ -32,9 +34,10 @@ export default function Navbar() {
         <Link href="/" className="flex items-center gap-3 group">
           <div className="relative w-10 h-10">
             <Image
-              src="/Logo.PNG"
+              src="/logo.PNG"
               alt="Lillies Wick & Wonder"
               fill
+              sizes="40px"
               className="object-contain"
             />
           </div>
@@ -64,6 +67,24 @@ export default function Navbar() {
           >
             Shop Now
           </Link>
+
+          {/* Cart button */}
+          <button
+            onClick={() => setOpen(true)}
+            className="relative p-2 text-[#9A8F82] hover:text-[#C9A96E] transition-colors"
+            aria-label="Open cart"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" strokeLinecap="round" strokeLinejoin="round"/>
+              <line x1="3" y1="6" x2="21" y2="6" strokeLinecap="round"/>
+              <path d="M16 10a4 4 0 01-8 0" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+            {count > 0 && (
+              <span className="absolute -top-0.5 -right-0.5 w-4 h-4 bg-[#C9A96E] text-[#0A0A0A] text-[10px] font-bold rounded-full flex items-center justify-center font-body">
+                {count}
+              </span>
+            )}
+          </button>
 
           {/* Mobile menu button */}
           <button

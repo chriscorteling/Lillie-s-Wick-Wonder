@@ -25,10 +25,11 @@ export default function Hero() {
       {/* Background image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/IMG_7337.JPG"
+          src="/moulds/homepage.png"
           alt="Lillies Wick & Wonder luxury candle"
           fill
           priority
+          sizes="100vw"
           className="object-cover object-center"
         />
         {/* Dark overlay */}

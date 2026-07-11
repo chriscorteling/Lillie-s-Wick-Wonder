@@ -1,8 +1,12 @@
+'use client'
+
 import Image from 'next/image'
-import Link from 'next/link'
 import type { Product } from '@/data/products'
+import { useCart } from '@/context/CartContext'
 
 export default function ProductCard({ product }: { product: Product }) {
+  const { add } = useCart()
+
   return (
     <div className="group relative bg-[#141414] border border-[#262626] hover:border-[#C9A96E]/40 transition-all duration-500 overflow-hidden">
       {/* Image */}
@@ -11,13 +15,17 @@ export default function ProductCard({ product }: { product: Product }) {
           src={product.image}
           alt={product.name}
           fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
           className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#141414]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
         {/* Quick add overlay */}
         <div className="absolute inset-x-0 bottom-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-          <button className="w-full py-3 bg-[#C9A96E] text-[#0A0A0A] text-xs tracking-widest uppercase hover:bg-[#E8D5B0] transition-colors font-body">
+          <button
+            onClick={() => add(product)}
+            className="w-full py-3 bg-[#C9A96E] text-[#0A0A0A] text-xs tracking-widest uppercase hover:bg-[#E8D5B0] transition-colors font-body"
+          >
             Add to Cart
           </button>
         </div>
@@ -30,7 +38,7 @@ export default function ProductCard({ product }: { product: Product }) {
             {product.name}
           </h3>
           <span className="text-sm text-[#C9A96E] font-body whitespace-nowrap">
-            ${product.price}
+            LKR {product.price.toLocaleString()}
           </span>
         </div>
         {product.scent && (

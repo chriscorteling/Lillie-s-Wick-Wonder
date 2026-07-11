@@ -7,22 +7,22 @@ const featured = products.filter((p) => p.featured)
 
 const collections = [
   {
-    title: 'Candles',
-    description: 'Hand-poured luxury candles in dark, intoxicating scents.',
-    image: '/IMG_7332.JPG',
-    href: '/shop',
+    title: 'Rose Candles',
+    description: 'Sculpted floral candles, hand-poured in natural wax with luxury fragrance oils.',
+    image: '/collections/rose-collection.png',
+    href: '/shop?category=rose-candles',
   },
   {
-    title: 'Gift Sets',
-    description: 'Beautifully curated sets for those who deserve something special.',
-    image: '/45b06e3c-b678-4442-b094-2bc3f0edb1b9.JPG',
-    href: '/shop',
+    title: 'Premium Glass',
+    description: 'Elevated glass vessels filled with our finest wax blends. Minimal and luxurious.',
+    image: '/collections/glass-collection.png',
+    href: '/shop?category=premium-glass',
   },
   {
-    title: 'Wax Melts',
-    description: 'All the ambiance, no flame. Luxury scent without limits.',
-    image: '/A2F0AE2C-1A6A-4152-A2F9-CF6E0F5997C2.PNG',
-    href: '/shop',
+    title: 'Gift Packs',
+    description: 'Beautifully curated sets, wrapped and ready for any occasion.',
+    image: '/collections/gift-collection.png',
+    href: '/shop?category=gift-packs',
   },
 ]
 
@@ -43,6 +43,7 @@ export default function FeaturedCollections() {
                 src={col.image}
                 alt={col.title}
                 fill
+                sizes="(max-width: 768px) 100vw, 33vw"
                 className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/90 via-[#0A0A0A]/30 to-transparent" />

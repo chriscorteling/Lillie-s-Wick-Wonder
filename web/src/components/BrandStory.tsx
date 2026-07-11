@@ -8,10 +8,10 @@ export default function BrandStory() {
         {/* Images grid */}
         <div className="grid grid-cols-2 gap-4">
           <div className="relative aspect-[3/4] overflow-hidden">
-            <Image src="/IMG_7330.JPG" alt="Lillies candle" fill className="object-cover" />
+            <Image src="/moulds/red-rose.jpeg" alt="Lillies candle" fill sizes="(max-width: 1024px) 50vw, 25vw" className="object-cover" />
           </div>
           <div className="relative aspect-[3/4] overflow-hidden mt-8">
-            <Image src="/IMG_7331.JPG" alt="Lillies candle flame" fill className="object-cover" />
+            <Image src="/moulds/white-rose.png" alt="Lillies candle" fill sizes="(max-width: 1024px) 50vw, 25vw" className="object-cover" />
           </div>
         </div>
 
