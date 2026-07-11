@@ -46,7 +46,7 @@ export default function ContactPage() {
 
           <div className="space-y-8">
             {[
-              { label: 'Email', value: 'hello@lillieswickandwonder.com' },
+              { label: 'Email', value: 'lillies.wicknwonder@gmail.com' },
               { label: 'Hours', value: 'Mon–Fri · 9am–5pm' },
               { label: 'Returns', value: '14-day return window' },
             ].map((item) => (
