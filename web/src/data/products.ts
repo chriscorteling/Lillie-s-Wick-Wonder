@@ -89,6 +89,17 @@ export const products: Product[] = [
     burnTime: '60 hours',
   },
 
+  {
+    id: '9',
+    name: 'Bubblegum',
+    price: 1300,
+    category: 'premium-glass',
+    description: 'A playful yet refined glass candle in a soft blush tone, filled with a sweet and creamy wax blend.',
+    image: '/glass/bubblegum.png',
+    scent: 'Bubblegum · Vanilla · Coconut',
+    burnTime: '60 hours',
+  },
+
   // Gift Packs
   {
     id: '8',
