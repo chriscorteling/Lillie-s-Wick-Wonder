@@ -48,18 +48,12 @@ export default function Hero() {
         <p className="text-[#9A8F82] text-lg md:text-xl leading-relaxed max-w-xl mx-auto mb-12 font-body">
           Small-batch luxury candles crafted for those who appreciate the beauty found in shadows, rare scents, and slow moments.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex justify-center">
           <Link
             href="/shop"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#C9A96E] text-[#0A0A0A] text-sm tracking-widest uppercase hover:bg-[#E8D5B0] transition-colors duration-300 font-body"
+            className="inline-flex items-center justify-center gap-2 px-12 py-5 bg-[#C9A96E] text-[#0A0A0A] text-base tracking-widest uppercase hover:bg-[#E8D5B0] transition-colors duration-300 font-body font-semibold shadow-lg shadow-[#C9A96E]/20"
           >
-            Explore Collection
-          </Link>
-          <Link
-            href="/about"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-[#C9A96E]/40 text-[#C9A96E] text-sm tracking-widest uppercase hover:border-[#C9A96E] hover:bg-[#C9A96E]/10 transition-colors duration-300 font-body"
-          >
-            Our Story
+            Shop Now
           </Link>
         </div>
       </div>
