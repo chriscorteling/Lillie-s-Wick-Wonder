@@ -104,7 +104,7 @@ export const products: Product[] = [
   {
     id: '8',
     name: 'The Wonder Set',
-    price: 2250,
+    price: 3350,
     category: 'gift-packs',
     description: 'Five of our signature pieces beautifully boxed — the ultimate luxury gift for any occasion.',
     image: '/gift-packs/five-items-giftpack.png',
