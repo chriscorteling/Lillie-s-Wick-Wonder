@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { useCart } from '@/context/CartContext'
 
-const WHATSAPP_NUMBER = '94702789944'
+const WHATSAPP_NUMBER = '94762622867'
 const DELIVERY_FEE = 450
 
 export default function CartDrawer() {

@@ -44,7 +44,7 @@ export default function AboutPage() {
           </p>
 
           <p className="text-[#9A8F82] text-base leading-relaxed font-body">
-            We believe the best candles aren't just pretty objects — they transform a space. They slow time. They create ceremony out of the ordinary. That's the wonder in Lillies Wick & Wonder.
+            We believe the best candles aren&apos;t just pretty objects — they transform a space. They slow time. They create ceremony out of the ordinary. That&apos;s the wonder in Lillies Wick & Wonder.
           </p>
 
           {/* Values */}
