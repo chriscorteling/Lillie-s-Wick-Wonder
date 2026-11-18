@@ -96,6 +96,17 @@ export default function Footer() {
             Handcrafted with love · Small batch · Slow burn
           </p>
         </div>
+        <p className="mt-6 text-center text-xs text-[#6B6460] tracking-wide">
+          Website by{' '}
+          <a
+            href="https://www.corteling-dev.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#C9A96E] hover:text-[#F5F0E8] transition-colors"
+          >
+            Corteling Dev
+          </a>
+        </p>
       </div>
     </footer>
   )
