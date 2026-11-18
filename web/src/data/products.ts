@@ -8,6 +8,7 @@ export type Product = {
   featured?: boolean
   scent?: string
   burnTime?: string
+  freeDelivery?: boolean
 }
 
 export const products: Product[] = [
@@ -104,11 +105,12 @@ export const products: Product[] = [
   {
     id: '8',
     name: 'The Wonder Set',
-    price: 3350,
+    price: 4450,
     category: 'gift-packs',
     description: 'Five of our signature pieces beautifully boxed — the ultimate luxury gift for any occasion.',
     image: '/gift-packs/five-items-giftpack.png',
     featured: true,
+    freeDelivery: true,
   },
 ]
 

@@ -1,11 +1,30 @@
 'use client'
 
-import { useState } from 'react'
+import { Suspense } from 'react'
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import ProductCard from '@/components/ProductCard'
 import { products, categories } from '@/data/products'
 
 export default function ShopPage() {
-  const [active, setActive] = useState<string>('all')
+  return (
+    <Suspense>
+      <Shop />
+    </Suspense>
+  )
+}
+
+function Shop() {
+  const router = useRouter()
+  const pathname = usePathname()
+  const searchParams = useSearchParams()
+
+  const param = searchParams.get('category')
+  const active = categories.some((c) => c.id === param) ? (param as string) : 'all'
+
+  const setActive = (id: string) => {
+    const url = id === 'all' ? pathname : `${pathname}?category=${id}`
+    router.replace(url, { scroll: false })
+  }
 
   const filtered = active === 'all' ? products : products.filter((p) => p.category === active)
 

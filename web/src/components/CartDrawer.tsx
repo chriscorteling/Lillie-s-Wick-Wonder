@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { useCart } from '@/context/CartContext'
 
-const WHATSAPP_NUMBER = '94762622867'
+const WHATSAPP_NUMBER = '94702789944'
 const DELIVERY_FEE = 450
 
 export default function CartDrawer() {
@@ -13,7 +13,8 @@ export default function CartDrawer() {
   const [step, setStep] = useState<'cart' | 'details'>('cart')
   const [fulfillment, setFulfillment] = useState<'delivery' | 'pickup'>('delivery')
 
-  const appliedFee = fulfillment === 'pickup' ? 0 : DELIVERY_FEE
+  const freeDelivery = items.some((i) => i.freeDelivery)
+  const appliedFee = fulfillment === 'pickup' || freeDelivery ? 0 : DELIVERY_FEE
   const grandTotal = total + appliedFee
 
   function handleSendOrder() {
@@ -28,7 +29,7 @@ export default function CartDrawer() {
       '',
       '*Order:*',
       ...lines,
-      fulfillment === 'delivery' ? `• Delivery Fee — LKR ${appliedFee.toLocaleString()}` : '• Pickup (no delivery fee)',
+      fulfillment === 'pickup' ? '• Pickup (no delivery fee)' : freeDelivery ? '• Delivery — FREE' : `• Delivery Fee — LKR ${appliedFee.toLocaleString()}`,
       '',
       `*Total: LKR ${grandTotal.toLocaleString()}*`,
       '',
@@ -163,8 +164,8 @@ export default function CartDrawer() {
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-[#9A8F82] font-body">Delivery fee</span>
-                    {fulfillment === 'pickup'
-                      ? <span className="text-sm text-green-400 font-body">Free</span>
+                    {appliedFee === 0
+                      ? <span className="text-sm text-green-400 font-body font-bold">Free</span>
                       : <span className="text-sm text-[#F5F0E8] font-body">LKR {DELIVERY_FEE.toLocaleString()}</span>
                     }
                   </div>
@@ -204,8 +205,8 @@ export default function CartDrawer() {
                 ))}
                 <div className="flex justify-between text-sm font-body">
                   <span className="text-[#9A8F82]">Delivery fee</span>
-                  {fulfillment === 'pickup'
-                    ? <span className="text-green-400">Free</span>
+                  {appliedFee === 0
+                    ? <span className="text-green-400 font-bold">Free</span>
                     : <span className="text-[#F5F0E8]">LKR {appliedFee.toLocaleString()}</span>
                   }
                 </div>

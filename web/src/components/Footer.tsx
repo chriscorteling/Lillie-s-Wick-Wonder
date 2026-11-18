@@ -27,7 +27,7 @@ export default function Footer() {
                 Instagram
               </a>
               <a
-                href="https://wa.me/94762622867"
+                href="https://wa.me/94702789944"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-xs tracking-widest uppercase text-[#6B6460] hover:text-[#C9A96E] transition-colors"
@@ -71,7 +71,6 @@ export default function Footer() {
             <h4 className="text-xs tracking-widest uppercase text-[#C9A96E] mb-5 font-body">Info</h4>
             <ul className="space-y-3">
               {[
-                { label: 'Our Story', href: '/about' },
                 { label: 'Contact', href: '/contact' },
                 { label: 'Shipping & Returns', href: '/contact' },
                 { label: 'FAQ', href: '/contact' },

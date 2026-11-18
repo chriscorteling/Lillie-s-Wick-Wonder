@@ -18,6 +18,11 @@ export default function ProductCard({ product }: { product: Product }) {
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
           className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
         />
+        {product.freeDelivery && (
+          <span className="absolute top-3 left-3 z-10 px-3 py-1.5 bg-[#C9A96E] text-[#0A0A0A] text-xs font-bold tracking-widest uppercase font-body">
+            Free Delivery
+          </span>
+        )}
         <div className="absolute inset-0 bg-gradient-to-t from-[#141414]/60 to-transparent md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500" />
 
         {/* Quick add overlay — always visible on mobile, hover on desktop */}
@@ -46,6 +51,9 @@ export default function ProductCard({ product }: { product: Product }) {
         )}
         {product.burnTime && (
           <p className="text-xs text-[#6B6460] font-body">{product.burnTime} burn time</p>
+        )}
+        {product.freeDelivery && (
+          <p className="text-sm font-bold text-[#C9A96E] font-body">🚚 Free Delivery</p>
         )}
       </div>
     </div>

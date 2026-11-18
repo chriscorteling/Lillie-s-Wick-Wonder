@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import Link from 'next/link'
 
 export default function BrandStory() {
   return (
@@ -25,16 +24,9 @@ export default function BrandStory() {
           <p className="text-[#9A8F82] text-base leading-relaxed mb-6 font-body">
             Lillies Wick & Wonder began with a simple ritual — lighting a candle at dusk and letting the world slow down. What started as a personal obsession with rare florals and dark resins became a craft, and eventually, a brand.
           </p>
-          <p className="text-[#9A8F82] text-base leading-relaxed mb-10 font-body">
+          <p className="text-[#9A8F82] text-base leading-relaxed font-body">
             Every candle is hand-poured in small batches using natural waxes and fragrance oils sourced from around the world. We believe in slow beauty, intentional living, and the magic that happens when a flame meets the right scent.
           </p>
-          <Link
-            href="/about"
-            className="inline-flex items-center gap-3 text-sm tracking-widest uppercase text-[#C9A96E] hover:text-[#E8D5B0] transition-colors font-body group"
-          >
-            Read More
-            <span className="w-8 h-px bg-[#C9A96E] group-hover:w-12 transition-all duration-300" />
-          </Link>
         </div>
       </div>
     </section>

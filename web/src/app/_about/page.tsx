@@ -1,3 +1,6 @@
+// Disabled: the "_" prefix keeps this folder out of routing, so /about is not live.
+// To re-enable, rename src/app/_about back to src/app/about and restore the
+// "Our Story" links in Navbar.tsx, Footer.tsx and the "Read More" link in BrandStory.tsx.
 import Image from 'next/image'
 import Link from 'next/link'
 
