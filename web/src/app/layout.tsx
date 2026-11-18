@@ -20,6 +20,15 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'Lillies Wick & Wonder | Luxury Candles',
   description: 'Handcrafted luxury candles, wax melts, and gift sets. Dark, moody, and intoxicating scents made with love.',
+  openGraph: {
+    title: 'Lillies Wick & Wonder | Luxury Candles',
+    description: 'Handcrafted luxury candles, wax melts, and gift sets. Dark, moody, and intoxicating scents made with love.',
+    siteName: 'Lillies Wick & Wonder',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+  },
 }
 
 export default function RootLayout({
