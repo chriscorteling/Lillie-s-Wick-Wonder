@@ -18,6 +18,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://shoplilliescandles.com'),
   title: 'Lillies Wick & Wonder | Luxury Candles',
   description: 'Handcrafted luxury candles, wax melts, and gift sets. Dark, moody, and intoxicating scents made with love.',
   openGraph: {
